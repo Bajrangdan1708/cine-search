@@ -1,0 +1,30 @@
+.favorites {
+  min-height: calc(100vh - 56px);
+}
+
+.favorites-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+.favorites-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 8px;
+}
+
+.favorites-count {
+  font-size: 13px;
+  color: #888;
+  margin: 0 0 24px;
+}
+
+.favorites-empty {
+  color: #666;
+  font-size: 14px;
+  padding: 60px 0;
+  text-align: center;
+}
+

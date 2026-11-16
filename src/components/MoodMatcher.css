@@ -1,0 +1,74 @@
+.mood-matcher {
+  margin-bottom: 8px;
+}
+
+.mood-matcher__form {
+  display: flex;
+  gap: 8px;
+  max-width: 600px;
+}
+
+.mood-matcher__input {
+  flex: 1;
+  height: 40px;
+  padding: 0 12px;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.mood-matcher__input::placeholder {
+  color: #666;
+}
+
+.mood-matcher__input:focus {
+  border-color: #555;
+}
+
+.mood-matcher__input:disabled {
+  opacity: 0.6;
+}
+
+.mood-matcher__btn {
+  height: 40px;
+  padding: 0 20px;
+  background: #e50914;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+
+.mood-matcher__btn:hover:not(:disabled) {
+  background: #c2070f;
+}
+
+.mood-matcher__btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.mood-matcher__result {
+  margin: 12px 0 0;
+  font-size: 13px;
+  color: #aaa;
+}
+
+.mood-matcher__result strong {
+  color: #fff;
+}
+
+.mood-matcher__error {
+  margin: 12px 0 0;
+  font-size: 13px;
+  color: #e50914;
+}
+
