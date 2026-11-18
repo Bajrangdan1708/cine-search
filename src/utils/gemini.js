@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 const GEMINI_KEY = import.meta.env.VITE_GEMINI_KEY;
-const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent`;
+const GEMINI_URL =
+  'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent';
 
 export async function getMoodMovie(moodText) {
   if (!GEMINI_KEY) {
@@ -23,8 +24,11 @@ export async function getMoodMovie(moodText) {
     }
   );
 
-  const title = data?.candidates?.[0]?.content?.parts?.[0]?.text?.trim();
+  const parts = data?.candidates?.[0]?.content?.parts || [];
+  const textPart = parts.find((p) => p.text && !p.thought);
+  const rawTitle = textPart ? textPart.text : parts[0]?.text;
+  const title = rawTitle ? rawTitle.trim().replace(/^["']|["']$/g, '') : null;
+
   if (!title) throw new Error('No movie suggestion received from the AI.');
   return title;
 }
-
