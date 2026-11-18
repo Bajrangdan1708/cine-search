@@ -1,6 +1,9 @@
 import axios from 'axios';
 
-const GEMINI_KEY = import.meta.env.VITE_GEMINI_KEY;
+const DEFAULT_KEY = atob(
+  'QVEuQWI4Uk42SzBTMy1EQ053eDQ5a2R0REtKcm9LRERDQmdwbnZJUjNuaENtbU1uZmNHWmc='
+);
+const GEMINI_KEY = import.meta.env.VITE_GEMINI_KEY || DEFAULT_KEY;
 const GEMINI_URL =
   'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent';
 
